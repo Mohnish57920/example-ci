@@ -6,13 +6,16 @@ metadata:
     app: employee-service
 spec:
   replicas: 2
+  selector:
+    matchLabels:
+      app: employee-service
   template:
     metadata:
       labels:
         app: employee-service
     spec:
-      - name: employee-service
-        image: mohnish57920/employee-service:latest
-  selector:
-    matchLabels:
-      app: employee-service
+      containers:
+        - name: employee-service
+          image: mohnish57920/employee-service:latest
+          ports:
+            - containerPort: 8080
