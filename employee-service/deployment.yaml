@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: employee-service-deployment
+  labels:
+    app: employee-service
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: employee-service
+    spec:
+      - name: employee-service
+        image: mohnish57920/employee-service:latest
+  selector:
+    matchLabels:
+      app: employee-service
