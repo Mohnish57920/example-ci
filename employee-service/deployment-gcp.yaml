@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: employee-service-deployment
+  labels:
+    app: employee-service
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: employee-service
+  template:
+    metadata:
+      labels:
+        app: employee-service
+    spec:
+      containers:
+        - name: employee-service
+          image: gcr.io/example-project-gke/employee-service:v1.0
+          ports:
+            - containerPort: 8080
