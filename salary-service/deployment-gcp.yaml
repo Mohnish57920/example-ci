@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: salary-service-deployment
+  labels:
+    app: salary-service
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: salary-service
+  template:
+    metadata:
+      labels:
+        app: salary-service
+    spec:
+      containers:
+        - name: salary-service
+          image: gcr.io/example-project-gke/salary-service:v1.0
+          ports:
+            - containerPort: 8080

@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: salary-service-deployment
+  labels:
+    app: salary-service
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: salary-service
+  template:
+    metadata:
+      labels:
+        app: salary-service
+    spec:
+      containers:
+        - name: salary-service
+          image: mohnish57920/salary-service:latest
+          ports:
+            - containerPort: 8081
