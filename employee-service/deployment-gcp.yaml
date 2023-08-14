@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: employee-service
-          image: gcr.io/example-project-gke/employee-service:v1.2
+          image: gcr.io/example-project-gke/employee-service:v1.3
           ports:
             - containerPort: 8080
