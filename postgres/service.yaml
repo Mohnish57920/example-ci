@@ -8,7 +8,8 @@ metadata:
 spec:
   ports:
   - port: 5432
-  clusterIP: None
+    targetPort: 5432
+  type: ClusterIP
   selector:
     app: postgres
     tier: database
