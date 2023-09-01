@@ -9,8 +9,6 @@ spec:
   selector:
     matchLabels:
       app: postgres
-  strategy:
-    type: Recreate
   template:
     metadata:
       labels:
@@ -18,7 +16,7 @@ spec:
     spec:
       containers:
         - name: postgres
-          image: postgres
+          image: postgres:12-alpine
           imagePullPolicy: "IfNotPresent"
           env:
             - name: POSTGRES_USER
@@ -38,7 +36,6 @@ spec:
                   key: name
           ports:
             - containerPort: 5432
-              name: postgres
           volumeMounts:
             - mountPath: /var/lib/postgres/data
               name: postgres-persistence-storage
