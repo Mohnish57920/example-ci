@@ -20,20 +20,11 @@ spec:
           imagePullPolicy: "IfNotPresent"
           env:
             - name: POSTGRES_USER
-              valueFrom:
-                secretKeyRef:
-                  name: postgres-credentials
-                  key: postgres_user
+              value: postgres
             - name: POSTGRES_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: postgres-credentials
-                  key: postgres_password
+              value: postgres
             - name: POSTGRES_DB
-              valueFrom:
-                configMapKeyRef:
-                  name: postgres-config
-                  key: name
+              value: candidatedb
           ports:
             - containerPort: 5432
           volumeMounts:
