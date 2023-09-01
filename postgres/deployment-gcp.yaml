@@ -33,7 +33,7 @@ spec:
                   key: postgres_password
             - name: POSTGRES_DB
               valueFrom:
-                configMapRef:
+                configMapKeyRef:
                   name: postgres-config
                   key: name
           ports:
@@ -44,5 +44,5 @@ spec:
               name: postgres-persistence-storage
       volumes:
         - name: postgres-persistence-storage
-          persistence-volume-claim:
+          persistentVolumeClaim:
             claimName: postgres-pv-claim
