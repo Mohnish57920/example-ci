@@ -26,6 +26,7 @@ spec:
               value: candidatedb
           ports:
             - containerPort: 5432
+              name: postgres
           volumeMounts:
             - mountPath: /var/lib/postgres/data
               name: postgres-persistence-storage
