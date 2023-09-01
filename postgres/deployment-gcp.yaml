@@ -9,7 +9,8 @@ spec:
   selector:
     matchLabels:
       app: postgres
-  strategy: Recreate
+  strategy:
+    type: Recreate
   template:
     metadata:
       labels:
