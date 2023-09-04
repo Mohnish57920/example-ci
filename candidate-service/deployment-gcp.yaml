@@ -23,12 +23,6 @@ spec:
             - name: DB_URL
               value: jdbc:postgresql://postgres-service:5432/candidatedb
             - name: POSTGRES_USER
-              valueFrom:
-                secretKeyRef:
-                  name: postgres-credentials
-                  key: postgres_user
+              value: postgres
             - name: POSTGRES_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: postgres-credentials
-                  key: postgres_password
+              value: postgres
