@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: postgres
-          image: postgres:12-alpine
+          image: postgres:latest
           env:
             - name: POSTGRES_USER
               value: postgres
@@ -25,9 +25,6 @@ spec:
               value: postgres
             - name: POSTGRES_DB
               value: candidatedb
-          ports:
-            - containerPort: 5432
-              name: postgres
           volumeMounts:
             - mountPath: /var/lib/postgres/data
               name: postgres-persistence-storage
