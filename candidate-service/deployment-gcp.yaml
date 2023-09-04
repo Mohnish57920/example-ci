@@ -16,21 +16,12 @@ spec:
     spec:
       containers:
         - name: candidate-service
-          image: gcr.io/example-project-gke/candidate-service:v1.4
+          image: gcr.io/example-project-gke/candidate-service:v1.5
           ports:
             - containerPort: 8080
-          args: ["--spring.profiles.active=prod"]
           env:
-            - name: DB_HOST
-              valueFrom:
-                configMapKeyRef:
-                  name: postgres-config
-                  key: host
-            - name: DB_NAME
-              valueFrom:
-                configMapKeyRef:
-                  name: postgres-config
-                  key: name
+            - name: DB_URL
+              value: jdbc:postgresql://postgres-service:5432/candidatedb
             - name: POSTGRES_USER
               valueFrom:
                 secretKeyRef:

@@ -6,6 +6,7 @@ metadata:
     app: postgres
     tier: database
 spec:
+  replicas: 1
   selector:
     matchLabels:
       app: postgres
