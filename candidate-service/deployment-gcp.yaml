@@ -21,7 +21,7 @@ spec:
             - containerPort: 8080
           env:
             - name: DB_URL
-              value: jdbc:postgresql://postgres-service:5432/candidatedb
+              value: jdbc:postgresql://postgres:5432/candidatedb
             - name: POSTGRES_USER
               value: postgres
             - name: POSTGRES_PASSWORD
