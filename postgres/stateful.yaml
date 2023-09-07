@@ -19,17 +19,19 @@ spec:
         - name: postgres
           image: postgres:latest
           env:
-            - name: PGDATA
-              value: /var/lib/postgresql/data/pgdata
             - name: POSTGRES_USER
               value: postgres
             - name: POSTGRES_PASSWORD
               value: postgres
             - name: POSTGRES_DB
               value: candidatedb
+            - name: PGDATA
+              value: /var/lib/postgresql/data/pgdata
+          ports:
+            - containerPort: 5432
           volumeMounts:
-            - mountPath: /var/lib/postgres/data
-              name: postgres-persistence-storage
+              - name: postgres-data
+                mountPath: "/var/lib/postgresql/data"
       volumes:
         - name: postgres-persistence-storage
           persistentVolumeClaim:
