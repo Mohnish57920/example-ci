@@ -11,5 +11,5 @@ spec:
       storage: 2Gi
   accessModes:
     - ReadWriteOnce
-  persistentVolumeClaimPolicy: Retain
+  reclaimPolicy: Retain
 
