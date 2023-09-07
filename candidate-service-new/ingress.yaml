@@ -4,12 +4,10 @@ metadata:
   name: test-ingress
 spec:
   rules:
-    - host: "mohnish57920.com"
+    - host: "test.candidate.example.com"
       http:
         paths:
-          - pathType: Prefix
-            path: /
-            backend:
+          - backend:
               service:
                 name: candidate-service
                 port:
