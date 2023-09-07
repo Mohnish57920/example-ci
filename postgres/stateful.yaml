@@ -30,7 +30,7 @@ spec:
           ports:
             - containerPort: 5432
           volumeMounts:
-              - name: postgres-data
+              - name: postgres-persistence-storage
                 mountPath: /var/lib/postgresql/data
       volumes:
         - name: postgres-persistence-storage
