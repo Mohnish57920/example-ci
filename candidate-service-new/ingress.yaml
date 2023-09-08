@@ -7,7 +7,9 @@ spec:
     - host: "test.candidate.example.com"
       http:
         paths:
-          - backend:
+          - pathType: Prefix
+            path: /
+            backend:
               service:
                 name: candidate-service
                 port:
