@@ -3,12 +3,17 @@ kind: Ingress
 metadata:
   name: test-ingress
 spec:
+  defaultBackend:
+    service:
+      name: candidate-service
+      port:
+        number: 8080
   rules:
     - host: "test.candidate.example.com"
       http:
         paths:
           - pathType: Prefix
-            path: /v1/candidates
+            path: /
             backend:
               service:
                 name: candidate-service
