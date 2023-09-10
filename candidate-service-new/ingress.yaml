@@ -9,8 +9,7 @@ spec:
       port:
         number: 8080
   rules:
-    - host: "test.candidate.example.com"
-      http:
+    - http:
         paths:
           - pathType: ImplementationSpecific
             path: /candidate
