@@ -12,8 +12,8 @@ spec:
     - host: "test.candidate.example.com"
       http:
         paths:
-          - pathType: Prefix
-            path: /
+          - pathType: ImplementationSpecific
+            path: /candidate
             backend:
               service:
                 name: candidate-service
