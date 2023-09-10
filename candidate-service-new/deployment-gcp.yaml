@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: candidate-service
-          image: gcr.io/example-project-gke/candidate-service:v1.9
+          image: gcr.io/example-project-gke/candidate-service:v1.10
           ports:
             - containerPort: 8080
           env:
