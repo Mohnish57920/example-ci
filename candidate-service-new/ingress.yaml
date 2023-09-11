@@ -16,8 +16,7 @@ spec:
       port:
         number: 8080
   rules:
-    - hosts:
-        - host: "mohnish57920.co.in"
+    - host: "mohnish57920.co.in"
       http:
         paths:
           - pathType: ImplementationSpecific
