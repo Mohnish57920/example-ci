@@ -1,0 +1,19 @@
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: demo-certificate
+  namespace: cert-manager
+spec:
+  acme:
+    config:
+      - domains:
+          - mohnish57920.co.in
+        http01:
+          ingress: test-ingress
+  commonName: mohnish57920
+  dnsNames:
+    - mohnish57920.co.in
+  issuerRef:
+    kind: ClusterIssuer
+    name: letsencrypt-staging
+  secretName: tls-secret
