@@ -4,8 +4,10 @@ metadata:
   name: test-ingress
   annotations:
     kubernetes.io/ingress.class: "nginx"
-    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    cert-manager.io/cluster-issuer: "letsencrypt-staging"
 spec:
+  tls:
+    - secretName: tls-secret
   defaultBackend:
     service:
       name: candidate-service
