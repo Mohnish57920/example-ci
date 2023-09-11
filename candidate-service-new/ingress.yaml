@@ -7,7 +7,9 @@ metadata:
     cert-manager.io/cluster-issuer: "letsencrypt-staging"
 spec:
   tls:
-    - secretName: tls-secret
+    - hosts:
+        - "*"
+      secretName: tls-secret
   defaultBackend:
     service:
       name: candidate-service
