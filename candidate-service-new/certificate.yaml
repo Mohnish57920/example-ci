@@ -1,4 +1,4 @@
-apiVersion: cert-manager.io/v1
+apiVersion: cert-manager.io/v1alpha3
 kind: Certificate
 metadata:
   name: demo-certificate
@@ -17,3 +17,4 @@ spec:
     kind: ClusterIssuer
     name: letsencrypt-staging
   secretName: tls-secret
+  usages: server auth
